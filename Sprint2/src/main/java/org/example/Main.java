@@ -21,8 +21,7 @@ public class Main {
         //task_five();
 
         /*Homework №4*/
-        /*Task №1*/
-        task_one_homework4();
+        homework4();
     }
 
     public static int[] createRandomNumericArray(Integer arraySize){
@@ -131,7 +130,7 @@ public class Main {
         printArray(targetArray);
     }
 
-    public static void task_one_homework4(){
+    public static void homework4(){
         Phone myPhone = new Phone("PhoneX", 150, "89121562478");
         Phone yourPhone = new Phone("Mi", 123, "81234567899");
         Phone otherPhone = new Phone("Samsung", 144, "81564897523");
