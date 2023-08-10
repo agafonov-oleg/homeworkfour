@@ -16,7 +16,6 @@ public class Main {
             throw new ContainerLaunchException(exception.getCause().toString());
         }
 
-        postgresDb.start();
         System.out.println("Hello world!");
     }
 }
