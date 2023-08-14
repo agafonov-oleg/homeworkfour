@@ -21,7 +21,12 @@ public class Main {
         //task_five();
 
         /*Homework №4*/
-        homework4();
+        //homework4();
+
+        /*Homework №5, Task №1*/
+        //Hen myHen = new Hen();
+        //myHen.chooseHen("Финляндия");
+
     }
 
     public static int[] createRandomNumericArray(Integer arraySize){
