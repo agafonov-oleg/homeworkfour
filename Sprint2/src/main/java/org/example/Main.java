@@ -26,6 +26,12 @@ public class Main {
         /*Homework №5, Task №1*/
         //Hen myHen = new Hen();
         //myHen.chooseHen("Финляндия");
+        /*Homework №5, Task №2*/
+        //Calculator calc = new Calculator();
+        //System.out.println(calc.multiply(2147483649L ,2147483649L));
+        //System.out.println(calc.subtract(2147483649L ,4611686022722355201L));
+        //System.out.println(calc.sum(5 ,5));
+        //System.out.println(calc.divide(5.22 ,2));
 
     }
 
