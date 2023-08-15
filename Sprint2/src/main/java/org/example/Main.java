@@ -1,10 +1,8 @@
 package org.example;
 import java.util.Arrays;
-import java.util.Objects;
 import java.util.Random;
 
-import org.example.User;
-import org.example.Phone;
+import static org.example.Reader.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -37,7 +35,16 @@ public class Main {
         //int[] targetArray = new int[] {1, 2, -66, 15};
         //System.out.println(array.min(targetArray));
         //System.out.println(array.max(targetArray));
-
+        /*Homework №5, Task №3*/
+        //Reader[] readers = createReaders(3);
+        //Reader reader = getRandomReader(readers);
+        //Book[] books = createBooks();
+        //reader.takeBook(books, reader);
+        //reader.takeBook(new String[]{"Book 1", "Book 2", "Book 3", "Book 4"}, reader);
+        //reader.takeBook(2, reader);
+        //reader.returnBook(books, reader);
+        //reader.returnBook(new String[]{"Book 1", "Book 2", "Book 3", "Book 4"}, reader);
+        //reader.returnBook(2, reader);
     }
 
     public static int[] createRandomNumericArray(Integer arraySize){
@@ -165,5 +172,26 @@ public class Main {
         yourPhone.receiveCall("Ivan");
         otherPhone.receiveCall("Petr");
         myPhone.receivePhoneCall("Oleg", myPhone.getNumber());
+    }
+
+    public static Reader[] createReaders(Integer arraySize){
+        Reader[] createdArray = new Reader[arraySize];
+        for(int i = 0; i < createdArray.length; i++) {
+            createdArray[i] = new Reader(getRandomElementFromArray(fioArray),
+                    getRandomLibraryCard(), getRandomElementFromArray(facultyArray),
+                    getRandomBirthDate(), getRandomElementFromArray(phoneArray));
+        }
+        return createdArray;
+    }
+
+    public static Reader getRandomReader(Reader[] readers){
+        return readers[new Random().nextInt(readers.length)];
+    }
+
+    public static Book[] createBooks(){
+        Book firstbook = new Book("Harry Potter", "J. K. Rowling");
+        Book secondbook = new Book("The Old Man and the Sea", "Ernest Hemingway");
+        Book thirdbook = new Book("The Master and Margarita", "Mikhail Bulgakov");
+        return new Book[]{firstbook, secondbook, thirdbook};
     }
 }
