@@ -32,6 +32,11 @@ public class Main {
         //System.out.println(calc.subtract(2147483649L ,4611686022722355201L));
         //System.out.println(calc.sum(5 ,5));
         //System.out.println(calc.divide(5.22 ,2));
+        /*Homework №5, Task №3*/
+        //ArrayUtil array = new ArrayUtil();
+        //int[] targetArray = new int[] {1, 2, -66, 15};
+        //System.out.println(array.min(targetArray));
+        //System.out.println(array.max(targetArray));
 
     }
 
