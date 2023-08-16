@@ -36,15 +36,15 @@ public class Main {
         //System.out.println(array.min(targetArray));
         //System.out.println(array.max(targetArray));
         /*Homework №5, Task №3*/
-        Reader[] readers = createReaders(3);
-        Reader reader = getRandomReader(readers);
-        Book[] books = createBooks();
-        reader.takeBook(books);
-        reader.takeBook(new String[]{"Book 1", "Book 2", "Book 3", "Book 4"});
-        reader.takeBook(2);
-        reader.returnBook(books);
-        reader.returnBook(new String[]{"Book 1", "Book 2", "Book 3", "Book 4"});
-        reader.returnBook(2);
+        //Reader[] readers = createReaders(3);
+        //Reader reader = getRandomReader(readers);
+        //Book[] books = createBooks();
+        //reader.takeBook(books);
+        //reader.takeBook(new String[]{"Book 1", "Book 2", "Book 3", "Book 4"});
+        //reader.takeBook(2);
+        //reader.returnBook(books);
+        //reader.returnBook(new String[]{"Book 1", "Book 2", "Book 3", "Book 4"});
+        //reader.returnBook(2);
     }
 
     public static int[] createRandomNumericArray(Integer arraySize){
