@@ -6,11 +6,11 @@ import java.util.GregorianCalendar;
 import java.util.Random;
 
 public class Reader {
-    String FIO;
-    Integer libraryCard;
-    String faculty;
-    Calendar birthDate;
-    String phone;
+    private final String FIO;
+    private final Integer libraryCard;
+    private final String faculty;
+    private final Calendar birthDate;
+    private final String phone;
     public static Integer numberOfReaders = 100;
     public static Integer startYearOfBirth = 1980;
     public static Integer finishYearOfBirth = 2005;
@@ -25,6 +25,22 @@ public class Reader {
         this.faculty = faculty;
         this.birthDate = birthDate;
         this.phone = phone;
+    }
+
+    public Integer getLibraryCard() {
+        return libraryCard;
+    }
+
+    public String getFaculty() {
+        return faculty;
+    }
+
+    public Calendar getBirthDate() {
+        return birthDate;
+    }
+
+    public String getPhone() {
+        return phone;
     }
 
     public static String getRandomElementFromArray(String[] array){
@@ -49,34 +65,34 @@ public class Reader {
         randomDate.set(Calendar.DAY_OF_YEAR, randomDayOfYear);
         return randomDate;
     }
-    public void takeBook(int numberOfBooks, Reader reader){
-        System.out.println(reader.FIO + " взял " + numberOfBooks + " книги");
+    public void takeBook(int numberOfBooks){
+        System.out.println(FIO + " взял " + numberOfBooks + " книги");
     }
 
-    public void takeBook(String[] array, Reader reader){
-        System.out.println(reader.FIO + " взял книги: " + Arrays.toString(array));
+    public void takeBook(String[] array){
+        System.out.println(FIO + " взял книги: " + Arrays.toString(array));
     }
 
-    public void takeBook(Book[] books, Reader reader){
+    public void takeBook(Book[] books){
         String[] booksNames = new String[books.length];
         for(int i = 0; i < books.length; i++) {
             booksNames[i] = books[i].nameOfBook;
         }
-        System.out.println(reader.FIO + " взял книги: " + Arrays.toString(booksNames));
+        System.out.println(FIO + " взял книги: " + Arrays.toString(booksNames));
     }
-    public void returnBook(int numberOfBooks, Reader reader){
-        System.out.println(reader.FIO + " вернул " + numberOfBooks + " книги");
-    }
-
-    public void returnBook(String[] array, Reader reader){
-        System.out.println(reader.FIO + " вернул книги: " + Arrays.toString(array));
+    public void returnBook(int numberOfBooks){
+        System.out.println(FIO + " вернул " + numberOfBooks + " книги");
     }
 
-    public void returnBook(Book[] books, Reader reader){
+    public void returnBook(String[] array){
+        System.out.println(FIO + " вернул книги: " + Arrays.toString(array));
+    }
+
+    public void returnBook(Book[] books){
         String[] booksNames = new String[books.length];
         for(int i = 0; i < books.length; i++) {
             booksNames[i] = books[i].nameOfBook;
         }
-        System.out.println(reader.FIO + " вернул книги: " + Arrays.toString(booksNames));
+        System.out.println(FIO + " вернул книги: " + Arrays.toString(booksNames));
     }
 }
