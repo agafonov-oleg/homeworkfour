@@ -27,6 +27,10 @@ public class Reader {
         this.phone = phone;
     }
 
+    public String getFIO() {
+        return FIO;
+    }
+
     public Integer getLibraryCard() {
         return libraryCard;
     }
