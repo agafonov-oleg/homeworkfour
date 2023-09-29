@@ -66,7 +66,6 @@ public class Main {
         //System.out.println(deleteOddElements(targetList));
         /*Homework №6, Task №8*/
         System.out.println(getIndexElement(targetList, 2));
-        //homeworkSix(10);
     }
 
     /* Список будет генерироваться от -arraySize/2 до arraySize/2 */
