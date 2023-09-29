@@ -1,6 +1,6 @@
 package org.example;
-import java.util.Arrays;
-import java.util.Random;
+import java.util.*;
+import java.lang.Error;
 
 import static org.example.Reader.*;
 
@@ -45,6 +45,115 @@ public class Main {
         //reader.returnBook(books);
         //reader.returnBook(new String[]{"Book 1", "Book 2", "Book 3", "Book 4"});
         //reader.returnBook(2);
+
+        /*Homework №6, Task №1*/
+        ArrayList<Integer> targetList = createRandomNumericArrayListInRange(10);
+        System.out.println(targetList);
+        /*Homework №6, Task №2*/
+        //System.out.println(getFirstElements(targetList, 21));
+        /*Homework №6, Task №3*/
+        //System.out.println(getUniqueElements(targetList));
+        /*Homework №6, Task №4*/
+        //System.out.println(ascendingElements(targetList));
+        //System.out.println(descendingElements(targetList));
+        /*Homework №6, Task №5*/
+        //System.out.println(getMinOfList(targetList));
+        //System.out.println(getMaxOfList(targetList));
+        //System.out.println(getSumOfList(targetList));
+        /*Homework №6, Task №6*/
+        //System.out.println(getPozitiveNumberOfCollection(targetList));
+        /*Homework №6, Task №7*/
+        //System.out.println(deleteOddElements(targetList));
+        /*Homework №6, Task №8*/
+        System.out.println(getIndexElement(targetList, 2));
+        //homeworkSix(10);
+    }
+
+    /* Список будет генерироваться от -arraySize/2 до arraySize/2 */
+    public static ArrayList<Integer> createRandomNumericArrayListInRange(Integer arraySize){
+        ArrayList<Integer> createdArrayList = new ArrayList<>();
+        for(int i = 0; i < arraySize; i++) {
+            createdArrayList.add(new Random().nextInt(arraySize) - arraySize/2);
+        }
+        return createdArrayList;
+    }
+
+    /* Возвращает первые n элементов из коллекции */
+    public static ArrayList<Integer> getFirstElements (ArrayList<Integer> firstList, int numberOfElements) {
+        if(numberOfElements > firstList.size()) {
+            numberOfElements = firstList.size();
+        }
+        ArrayList<Integer> secondList = new ArrayList<>();
+        for(int i = 0; i < numberOfElements; i++) {
+            secondList.add(firstList.get(i));
+        }
+        return secondList;
+    }
+
+    /* Возвращает уникальные элементы из коллекции */
+    public static ArrayList<Integer> getUniqueElements (ArrayList<Integer> firstList) {
+        Set<Integer> uniqueElementsList = new HashSet<>(firstList);
+        return new ArrayList<>(uniqueElementsList);
+    }
+
+    /* Сортирует коллекцию по возрастанию */
+    public static ArrayList<Integer> ascendingElements (ArrayList<Integer> firstList) {
+        firstList.sort(Comparator.naturalOrder());
+        return firstList;
+    }
+
+    /* Сортирует коллекцию по убыванию */
+    public static ArrayList<Integer> descendingElements (ArrayList<Integer> firstList) {
+        firstList.sort(Comparator.reverseOrder());
+        return firstList;
+    }
+
+    /* Получаем минамальное число в коллекции */
+    public static int getMinOfList (ArrayList<Integer> firstList) {
+        return Collections.min(firstList);
+    }
+
+    /* Получаем максимальное число в коллекции */
+    public static int getMaxOfList (ArrayList<Integer> firstList) {
+        return Collections.max(firstList);
+    }
+
+    /* Получаем сумму чисел в коллекции */
+    public static int getSumOfList (ArrayList<Integer> firstList) {
+        int sumOfList = 0;
+        for (Integer i : firstList) {
+            sumOfList += i;
+        }
+        return sumOfList;
+    }
+
+    /* Получаем коллекцию только положительных чисел */
+    public static ArrayList<Integer> getPozitiveNumberOfCollection(ArrayList<Integer> firstList) {
+        ArrayList<Integer> createdArrayList = new ArrayList<>();
+        for (Integer i : firstList) {
+            if (i > 0) {
+                createdArrayList.add(i);
+            }
+        }
+        return createdArrayList;
+    }
+
+    /* Удаляем из коллекции все нечетные числа */
+    public static ArrayList<Integer> deleteOddElements(ArrayList<Integer> firstList) {
+        ArrayList<Integer> createdArrayList = new ArrayList<>();
+        firstList.removeIf(i -> i % 2 != 0);
+        return firstList;
+    }
+
+    /* Получаем индекс элемента из коллекции */
+    public static String getIndexElement(ArrayList<Integer> firstList, int element) {
+        String iterator = "";
+        int indexValue = firstList.indexOf(element);
+        if (indexValue != -1)
+            iterator = String.valueOf(indexValue);
+        else
+            iterator = "Element " + element + " is not in the collection";
+        return iterator;
     }
 
     public static int[] createRandomNumericArray(Integer arraySize){
