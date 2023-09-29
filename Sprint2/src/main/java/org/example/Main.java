@@ -138,6 +138,7 @@ public class Main {
     }
 
     /* Получаем индекс элемента из коллекции */
+    /* Если таких элементов несколько, получим индекс первого из них */
     public static String getIndexElement(ArrayList<Integer> firstList, int element) {
         String iterator = "";
         int indexValue = firstList.indexOf(element);
