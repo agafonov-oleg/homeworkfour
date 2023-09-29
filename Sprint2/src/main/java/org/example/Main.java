@@ -1,6 +1,5 @@
 package org.example;
 import java.util.*;
-import java.lang.Error;
 
 import static org.example.Reader.*;
 
@@ -61,11 +60,11 @@ public class Main {
         //System.out.println(getMaxOfList(targetList));
         //System.out.println(getSumOfList(targetList));
         /*Homework №6, Task №6*/
-        //System.out.println(getPozitiveNumberOfCollection(targetList));
+        System.out.println(getPositiveNumberOfCollection(targetList));
         /*Homework №6, Task №7*/
         //System.out.println(deleteOddElements(targetList));
         /*Homework №6, Task №8*/
-        System.out.println(getIndexElement(targetList, 2));
+        //System.out.println(getIndexElement(targetList, 2));
     }
 
     /* Список будет генерироваться от -arraySize/2 до arraySize/2 */
@@ -127,19 +126,13 @@ public class Main {
     }
 
     /* Получаем коллекцию только положительных чисел */
-    public static ArrayList<Integer> getPozitiveNumberOfCollection(ArrayList<Integer> firstList) {
-        ArrayList<Integer> createdArrayList = new ArrayList<>();
-        for (Integer i : firstList) {
-            if (i > 0) {
-                createdArrayList.add(i);
-            }
-        }
-        return createdArrayList;
+    public static ArrayList<Integer> getPositiveNumberOfCollection(ArrayList<Integer> firstList) {
+        firstList.removeIf(i -> i <= 0);
+        return firstList;
     }
 
     /* Удаляем из коллекции все нечетные числа */
     public static ArrayList<Integer> deleteOddElements(ArrayList<Integer> firstList) {
-        ArrayList<Integer> createdArrayList = new ArrayList<>();
         firstList.removeIf(i -> i % 2 != 0);
         return firstList;
     }
